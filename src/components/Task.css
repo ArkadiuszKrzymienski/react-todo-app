@@ -1,0 +1,77 @@
+.task{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.task::after{
+    position: absolute;
+    content: '';
+    display: block;
+    bottom: 0;
+    left: 50%;
+    height: 1px;
+    width: 40%;
+    transform: translate(-50%, 0);
+    background-color: rgb(255, 150, 150);
+}
+
+.task:last-child::after{
+    display: none;
+}
+
+.done.task::after{
+    background-color: rgb(150, 255, 150);
+}
+
+.text{
+    width: calc(100% - 225px);
+}
+
+.doneText{
+    width: calc(100% - 90px);
+}
+
+.buttons, .doneButtons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 225px;
+}
+
+.doneButtons{
+    width: 90px;
+}
+
+button{
+    display: block;
+    font-size: 1em;
+    height: 40%;
+    padding: 5px;
+    background-color: transparent;
+    border: 2px solid rgb(255, 150, 150);
+    border-radius: 3px;
+    outline: 0;
+}
+
+button:hover{
+    cursor: pointer;
+    border: 2px solid black;
+    transition: .2s linear;
+}
+
+.delete{
+    background-color: rgb(255, 150, 150);
+}
+
+.doneDelete{
+    background-color: rgb(150, 255, 150);
+    border: 2px solid rgb(150, 255, 150);
+}
+
+.noTask{
+    font-size: 1.5em;
+    text-align: center;
+}
